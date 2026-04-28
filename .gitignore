@@ -1,0 +1,8 @@
+public/
+build/
+_gen/
+*.hprof
+*build.lock
+**.DS_Store
+.idea/
+**INK*.svg
