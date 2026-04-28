@@ -1,0 +1,554 @@
+<!DOCTYPE html><html lang="en"><head>
+	<meta name="generator" content="Hugo 0.133.1">
+    <meta charset="utf-8">
+<title>An Aggregate Vascular Morphogenesis Controller for Engingeered Self-Organising Spatial Structures</title>
+<meta name="description" content="Presentation @ACSOS 2024">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><link rel="stylesheet" href="/presentation-2024-acsos-fieldVMC/reveal-js/dist/reset.css">
+<link rel="stylesheet" href="/presentation-2024-acsos-fieldVMC/reveal-js/dist/reveal.css">
+  <link rel="stylesheet" href="/presentation-2024-acsos-fieldVMC/css/custom-theme.min.402a723b5ae13fe701fd33530db8d13b35230c06ac912740d40638d6d64a77f3.css" id="theme"><link rel="stylesheet" href="/presentation-2024-acsos-fieldVMC/highlight-js/solarized-dark.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oxygen Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu Mono" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/gh/DanySK/css-blur-animation/blur.css" rel="stylesheet" crossorigin="anonymous">
+
+<script src="https://kit.fontawesome.com/81ac037be0.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+
+  </head>
+  <body>
+    
+    <div class="reveal">
+      <div class="slides">
+  
+
+    <section><h1 id="an-aggregate-vascular-morphogenesis-controller-for-engingeered-self-organising-spatial-structures">An Aggregate Vascular Morphogenesis Controller for Engingeered Self-Organising Spatial Structures</h1>
+<p><a href="mailto:angela.cortecchia@unibo.it"><strong>Angela Cortecchia</strong></a> <!--<i class="fa-solid fa-computer"></i>-->,
+<a href="mailto:danilo.pianini@unibo.it">Danilo Pianini</a> <!--<i class="fa-solid fa-computer"></i>-->,
+<a href="mailto:giovanni.ciatto@unibo.it">Giovanni Ciatto</a> <!--<i class="fa-solid fa-computer"></i>-->,
+and
+<a href="mailto:roby.casadei@unibo.it">Roberto Casadei</a> <!--<i class="fa-solid fa-computer"></i>--></p>
+<div style="text-align: center; width: 100%;">
+<img src="example-background.svg" style="width: 40%">
+<!-- <i class="fa-solid fa-computer"></i> Department of Computer Science and Engineering, University of Bologna, Cesena (FC), Italy -->
+</div>
+</section><section>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row ">
+
+
+
+<div class="col "><h3 id="plants">Plants</h3>
+<p><img src="images/plant-svgrepo-com.svg" alt="plant image"></p>
+</div>
+
+
+
+<div class="col ">
+
+
+<span class="fragment ">
+  <h3 id="organizations">Organizations</h3>
+<p><img src="images/organization-order-svgrepo-com.svg" alt="organization order image"></p>
+
+</span>
+
+</div>
+
+
+
+<div class="col ">
+
+
+<span class="fragment ">
+  <h3 id="flocking-swarms">Flocking swarms</h3>
+<p><img src="images/flock.svg" alt="organization order image"></p>
+
+</span>
+
+</div>
+
+</div>
+</div>
+
+
+<span class="fragment ">
+  <h1 id="what-do-they-have-in-common">What do they have in common?</h1>
+
+</span>
+
+<span class="fragment "><h2 id="runtime-generated-hierarchical-structure"><strong>runtime-generated hierarchical structure</strong></h2>
+</span>
+</section><section>
+<h1 id="vascular-morphogenesis-controller-vmcsmall1small">Vascular Morphogenesis Controller (<strong>VMC</strong>)<small>[1]</small></h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row ">
+
+
+
+<div class="col col-8">
+<p class="fragment" data-fragment-index="0">A model for the growth of artificial structures over time.</p>
+<p class="fragment" data-fragment-index="1">Works on <b>tree-like structures</b>, in which every node can get information from the environment.</p>
+<p class="fragment" data-fragment-index="2">The leaves of the tree start by sending the amount of <b>success</b> they sense to the root.</p>
+<p class="fragment" data-fragment-index="3">The root sends back an amount of <b>resources</b> based on the success received from the leaves, regulating the tickness of their connections.</p>
+<h3 class="fragment" data-fragment-index="4"><i class="fa-solid fa-arrow-right"></i> Limitations</h3>
+<p class="fragment" data-fragment-index="5"><i class="fa-solid fa-triangle-exclamation"></i><b> Implicitly synchronous</b>.</p>
+<p class="fragment" data-fragment-index="11"><i class="fa-solid fa-triangle-exclamation"></i> Requires an <b> underlying tree structure</b> (can't work on graphs).</p>
+<!-- <p class = "fragment" data-fragment-index="12"><i class="fa-solid fa-angles-right"></i>Could restricts the model usefulness, leading to <b>abstraction gaps</b>.</p> -->
+</div>
+
+
+
+<div class="col ">
+<div class="r-stack">
+  <img class="fragment current-visible" data-fragment-index="0" src="images/tree.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="1" src="images/treeWithSensing.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="2" src="images/treeWithSuccess.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="3" src="images/treeWithResources.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="4" src="images/treeWithResourcesandSuccess.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="5" src="images/firstStep.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="6" src="images/secondStep.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="7" src="images/thirdStep.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="8" src="images/fourthStep.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="9" src="images/fifthStep.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="10" src="images/sixthStep.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="11" src="images/graph.svg" width="180%" height="170%">
+</div>
+</div>
+</div>
+</div>
+<div>
+<small style="text-align: left">
+<p>[1] Zahadat, P., Hofstadler, D.N., Schmickl, T. "Morphogenesis as a Collective Decision of Agents Competing for Limited Resource: A Plants Approach." 2018.</p>
+</small>
+</div>
+</section><section>
+<h1 id="a-possible-solution">A Possible Solution</h1>
+<p>Porting VMC into a framework that by-design:</p>
+<ol>
+<li>supports <strong>graph structures</strong> and</li>
+<li>features <strong>asynchronous</strong> computations.</li>
+</ol>
+
+
+<span class="fragment ">
+  <p>If the implementation is feasible,
+it will automatically overcome the limitations of the original model.</p>
+
+</span>
+
+</section><section>
+<h1 id="meet-aggregate-computingsmall2small">Meet Aggregate Computing<small>[2]</small></h1>
+<img src="./images/acDevices.svg" width="70%">
+<p>A macro-programming approach that defines the <strong>collective behavior</strong> of heterogeneous devices in a <strong>self-organizing system</strong>.</p>
+<p>Based on the <strong>Field Calculus</strong><small>[3]</small>, operates by manipulating distributed data structures called <em>fields</em>.</p>
+<div>
+<small style="text-align: left">
+[2] Beal, J., Pianini, D., Viroli, M. "Aggregate Programming for the Internet of Things." 2015.<br>
+[3] Audrito, G., Viroli, M., Damiani, F., Pianini, D., Beal, J. "A Higher-Order Calculus of Computational Fields." 2019.
+</small>
+</div>
+</section><section>
+<h1 id="fieldvmc-aggregate-computing-based-vmc"><code>FieldVMC</code>: <strong>Aggregate Computing</strong>-based VMC</h1>
+<h2 id="model">Model</h2>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row ">
+
+
+
+<div class="col col-8">
+<p class="fragment" data-fragment-index="0">Nodes can <b>compute</b>.</p>
+<p class="fragment" data-fragment-index="1">Neighboring nodes can <b>communicate</b>.</p>
+<p class="fragment" data-fragment-index="2">Nodes have <b>sensors</b>:<br><em>success, resource, distance, and optionally position.</em></p>
+<p class="fragment" data-fragment-index="3">Nodes have optional <b>actuators</b>:<br><em>spawning and destroying.</em></p>
+
+</div>
+
+
+
+<div class="col ">
+<div class="r-stack">
+  <img class="fragment current-visible" data-fragment-index="0" src="images/agent.svg" width="100%" height="100%">
+  <img class="fragment current-visible" data-fragment-index="1" src="images/connection.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="2" src="images/sensors.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="3" src="images/actuators.svg" width="180%" height="170%">
+</div>
+</div>
+</div>
+</div>
+</section><section>
+<h1 id="fieldvmc-aggregate-computing-based-vmc-1"><code>FieldVMC</code>: <strong>Aggregate Computing</strong>-based VMC</h1>
+<h2 id="implementation">Implementation</h2>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row ">
+
+
+
+<div class="col text-start col-md-7"><p>(multiple) <strong>Trees</strong> are built on top of <strong>arbitrary networks</strong> using
+the <em>self-organizing coordination regions</em> (SCR)<small>[4]</small> pattern.</p>
+<p class="fragment" data-fragment-index="0"><b>SCR</b> performs <b>continuously</b>:</p>
+<ol>
+  <li class="fragment" data-fragment-index="1">Sparse <b>leader election</b>;</li>
+  <li class="fragment" data-fragment-index="3"><b>Control region expansion</b> from leaders;</li>
+  <li class="fragment" data-fragment-index="4"><b>Upstream</b> information <b>flows</b> construction;</li>
+  <li class="fragment" data-fragment-index="5"><b>Decision-making</b> and <b>downstream propagation</b>.</li>
+</ol>
+</div>
+
+
+
+<div class="col "><div class="r-stack">
+  <img class=" current-visible" src="images/network-1.svg" width="100%" height="100%">
+  <img class="fragment current-visible" data-fragment-index="1" src="images/network-candidates.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="2" src="images/network-leaders.svg" width="180%" height="170%">
+  <img class="fragment current-visible" data-fragment-index="3" src="images/network-regions.svg" width="180%" height="170%">
+    <img class="fragment current-visible" data-fragment-index="4" src="images/network-upstream.svg" width="180%" height="170%">
+    <img class="fragment current-visible" data-fragment-index="5" src="images/network-downstream2.svg" width="180%" height="170%">
+</div>
+</div>
+
+</div>
+</div>
+<div>
+<small style="text-align: left">
+[4] Casadei, R., Pianini, D., Viroli, M., Natali, A. "Self-organising Coordination Regions: A Pattern for Edge Computing." 2019.
+</small>
+</div>
+<!-- SCR addresses problem decomposition and task assignment in distributed settings by: (i) electing sparse lead- ers; (ii) evolving regions from leaders; (iii) creating upstream information flows [14] towards the leader; (iv) performing decision-making at the leader and downstreaming decisions. -->
+<!-- (roots, regions, flaws) -->
+<!-- open source, soon in standard lib -> pattern organizzativi che prima non c'erano -->
+<!-- validation made by qualitative approach -->
+</section><section>
+<h1 id="fieldvmc-aggregate-computing-based-vmc-2"><code>FieldVMC</code>: <strong>Aggregate Computing</strong>-based VMC</h1>
+<!-- 
+<div class="container w-100 m-0 p-0">
+    <div class='row '> -->
+
+<!-- 
+
+<div class='col '> -->
+<h2>How it works</h2>
+<ol>
+  <li><strong>Leader</strong>(s) are chosen <strong>dynamically</strong> based on resource availability;</li>
+  <li class="fragment" data-fragment-index="1">A <strong>gradient field</strong> defines zones around each leader, organized by distance to their nearest leader;</li>
+  <li class="fragment" data-fragment-index="2"><strong>Nodes send data to their leader</strong>, forming a hierarchical tree;</li>
+  <li class="fragment" data-fragment-index="3">Leaders <strong>distribute resources</strong> based on node performance;</li>
+  <li class="fragment" data-fragment-index="4">Nodes <strong>act based on resources and success</strong>, spawning new nodes or self-destructing.</li>
+</ol>
+<!-- </div> -->
+
+<!-- 
+
+<div class='col '> -->
+<h3 class="fragment" data-fragment-index="5"> Supported features</h3>
+
+<ul>
+  <li class="fragment" data-fragment-index="6"><strong>Multiple leaders</strong>: allowing easier management of large network by splitting them in sub-systems;</li>
+  <li class="fragment" data-fragment-index="7"><strong>Growth and shrink</strong>: different implementations of <em>spawning/destroying</em> strategies can lead to different structures.<br>
+  </li><li class="fragment" data-fragment-index="8"><strong>Merge and split</strong>: ihnerits <em>self-organizing</em> capabilities from AC, thus supports network segmentation or merging.</li>
+</ul>
+<!-- <span class='fragment ' ><h3>Supported features</h3></span>
+<span class='fragment ' ><ul>
+<li><strong>Multiple leaders</strong>: allowing easier management of large network by splitting them in sub-systems;</li>
+</ul>
+</span>
+<span class='fragment ' ><ul>
+<li><strong>Growth and shrink</strong>: different implementations of <em>spawning/destroying</em> strategies can lead to different structures;</li>
+</ul>
+</span>
+<span class='fragment ' ><ul>
+<li><strong>Merge and split</strong>: inherits <em>self-organizing</em> capabilities from AC, thus supports network segmentation or merging.</li>
+</ul>
+</span> -->
+<!-- </div> -->
+
+<!-- </div>
+</div> -->
+</section><section>
+<h1 id="application-example-germination">Application example: <strong>Germination</strong></h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row ">
+
+
+<div class="col ">
+<div class="r-stack">
+<img class="" src="images/oneRootWithIndex.gif" alt="One root sequence">
+  <img class="fragment current-visible" data-fragment-index="1" src="images/oneroot20.png" width="180%" height="170%">
+</div>
+</div>
+
+
+
+<div class="col "><h2 id="self-construction">Self-Construction</h2>
+<p>Creates a stable structure starting from a single node.</p>
+</div>
+
+</div>
+</div>
+</section><section>
+<h1 id="application-example-cutting">Application example: <strong>cutting</strong></h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row ">
+
+
+<div class="col ">
+<div class="r-stack">
+<img src="images/cuttingWithIndex.gif" alt="cutting sequence">
+  <img class="fragment current-visible" data-fragment-index="1" src="images/cutting27.png" width="180%" height="170%">
+</div>
+</div>
+
+
+
+<div class="col "><h2 id="self-repairing">Self-Repairing</h2>
+<p>Stabilization in two different structures starting from a damaged one.</p>
+<!-- Starts from a network filled with nodes able to communicate with others within a specific range, -->
+<!-- **without** spawn or destroy policies. -->
+<!-- The structure elects a leader, that results to be the one nearest the resources source. -->
+<!-- Once the system has stabilized, all the nodes at the center of the structure are removed, -->
+<!-- creating two different non-communicating sub-systems. -->
+<!-- Then the two sub-systems restabilize independently. -->
+</div>
+
+</div>
+</div>
+</section><section>
+<h1 id="application-example-grafting">Application example: <strong>Grafting</strong></h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row ">
+
+
+<div class="col ">
+<div class="r-stack">
+<img src="images/graftWithIndex.gif" alt="graft sequence">
+  <img class="fragment current-visible" data-fragment-index="1" src="images/graft23.png" width="180%" height="170%">
+</div>
+</div>
+
+
+
+<div class="col "><h2 id="self-integration">Self-Integration</h2>
+<p>Merging of two different structures into a single one.</p>
+<!-- Starts from two non-communicating systems, **without** spawn and destroy policies. -->
+<!-- After the two systems have stabilized, -->
+<!-- they are merged. -->
+<!-- A new system is created, with the resources shared among the nodes differently. -->
+</div>
+
+</div>
+</div>
+</section><section>
+<h1 id="application-example-budding">Application example: <strong>Budding</strong></h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row ">
+
+
+<div class="col ">
+<div class="r-stack">
+<img src="images/graftWithMoreLeadersWithIndex.gif" alt="More leaders sequence">
+  <img class="fragment current-visible" src="images/graftWithMoreLeaders38.png" width="190%" height="180%">
+</div>
+</div>
+
+
+
+<div class="col "><h2 id="self-segmentation">Self-Segmentation</h2>
+<p>Multiple independent subsystems from a single one.</p>
+</div>
+
+</div>
+</div>
+</section><section>
+<h1 id="application-example-abscission-and-regrowth">Application example: <strong>Abscission and regrowth</strong></h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row ">
+
+
+<div class="col ">
+<div class="r-stack">
+<img src="images/graftWithSpawningWithIndex.gif" alt="graft with spawning sequence">
+  <img class="fragment current-visible" src="images/graftWithSpawning60.png" width="180%" height="170%">
+</div>
+</div>
+
+
+
+<div class="col "><h2 id="self-optimization">Self-Optimization</h2>
+<p>Optimized merging of two different structures.</p>
+<!-- Starts from two non-communicating substructures **with** spawn and destroy policies. -->
+<!-- Firstly, the two substructures are optimized, -->
+<!-- then they get connected due to the spawning of new nodes. -->
+<!-- The new global structure reshapes, -->
+<!-- optimizing the balance between resources and success. -->
+</div>
+
+</div>
+</div>
+</section><section>
+<h1 id="conclusion--future-works">Conclusion &amp; Future works</h1>
+<p>The approach enables to express morphogenetic algorithm by a <strong>macroscopic perspective</strong> via aggregate computing.</p>
+<p>Possible <strong>future directions</strong>:</p>
+<ul>
+<li>Inspect more <strong>dynamics</strong> and <strong>complex organizational scenarios</strong>;</li>
+<li>Investigate the system response to <strong>continuous perturbations</strong>;</li>
+<li>Development of a <strong>software library</strong> of <em>aggregate morphogenetic blocks</em>.</li>
+</ul>
+</section><section>
+<h2 id="reproducible-experiments-here">Reproducible experiments here!</h2>
+<img src="images/vmc-qr.svg" alt="Examples repo">
+<div style="text-align: center;">
+<p><i class="fab fa-github mr-3" style="color: #095aa6;"></i> <a href="https://github.com/angelacorte/vmc-experiments">angelacorte/vmc-experiments</a></p>
+</div>
+</section>
+
+  
+
+
+</div>
+      
+
+    </div>
+<script type="text/javascript" src="/presentation-2024-acsos-fieldVMC/reveal-hugo/object-assign.js"></script>
+
+<a href="/presentation-2024-acsos-fieldVMC/reveal-js/dist/print/" id="print-location" style="display: none;"></a>
+
+<script type="application/json" id="reveal-hugo-site-params">{"custom_theme":"custom-theme.scss","custom_theme_compile":true,"custom_theme_options":{"enablesourcemap":true,"targetpath":"css/custom-theme.css"},"height":"1080","highlight_theme":"solarized-dark","history":true,"mermaid":[{}],"slide_number":true,"theme":"league","transition":"slide","transition_speed":"fast","width":"1920"}</script>
+<script type="application/json" id="reveal-hugo-page-params">null</script>
+
+<script src="/presentation-2024-acsos-fieldVMC/reveal-js/dist/reveal.js"></script>
+
+
+  
+  
+  <script type="text/javascript" src="/presentation-2024-acsos-fieldVMC/reveal-js/plugin/markdown/markdown.js"></script>
+  
+  <script type="text/javascript" src="/presentation-2024-acsos-fieldVMC/reveal-js/plugin/highlight/highlight.js"></script>
+  
+  <script type="text/javascript" src="/presentation-2024-acsos-fieldVMC/reveal-js/plugin/zoom/zoom.js"></script>
+  
+  <script type="text/javascript" src="/presentation-2024-acsos-fieldVMC/reveal-js/plugin/notes/notes.js"></script>
+  
+  
+  <script type="text/javascript" src="/presentation-2024-acsos-fieldVMC/reveal-js/plugin/notes/notes.js"></script>
+
+
+
+
+<script type="text/javascript">
+  
+  
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+
+  var revealHugoPlugins = {
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+   };
+  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
+  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
+  
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams),
+    camelize(revealHugoPlugins));
+  Reveal.initialize(options);
+</script>
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+
+
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+</script>
+
+<script type="text/javascript" id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+<script>
+  if (/.*?(\?|&)print-pdf/.test(window.location.toString())) {
+      var ytVideos = document.getElementsByTagName("iframe")
+      for (let i = 0; i < ytVideos.length; i++) {
+          var videoFrame = ytVideos[i]
+          var isYouTube = /^https?:\/\/(www.)youtube\.com\/.*/.test(videoFrame.src)
+          if (isYouTube) {
+              console.log(`Removing ${videoFrame.src}`)
+              var parent = videoFrame.parentElement
+              videoFrame.remove()
+              var p = document.createElement('p')
+              p.append(
+                  document.createTextNode(
+                      "There was an embedded video here, but it is disabled in the printed version of the slides."
+                  )
+              )
+              p.append(document.createElement('br'))
+              p.append(
+                  document.createTextNode(
+                      `Visit instead ${
+                          videoFrame.src
+                      } or ${
+                          videoFrame.src.replace(
+                              /(^https?:\/\/(www.)youtube\.com)\/(embed\/)(\w+).*/,
+                              "https://www.youtube.com/watch?v=$4"
+                          )
+                      }`
+                  )
+              )
+              parent.appendChild(p)
+          }
+      }
+  }
+</script>
+
+
+    
+  
+
+</body></html>
