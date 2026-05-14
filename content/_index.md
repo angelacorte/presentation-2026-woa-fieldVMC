@@ -1,12 +1,12 @@
 +++
 
-title = "An Aggregate Vascular Morphogenesis Controller for Engingeered Self-Organising Spatial Structures"
-description = "Presentation @ACSOS 2024"
+title = "FieldVMC: an Asynchronous Model and Platform for Self-Organising Morphogenesis of Artificial Structures"
+description = "Presentation @WOA 2026"
 outputs = ["Reveal"]
 
 +++
 
-# An Aggregate Vascular Morphogenesis Controller for Engingeered Self-Organising Spatial Structures
+# FieldVMC: an Asynchronous Model and Platform for Self-Organising Morphogenesis of Artificial Structures
 
 [**Angela Cortecchia**](mailto:angela.cortecchia@unibo.it) <!--<i class="fa-solid fa-computer"></i>-->,
 [Danilo Pianini](mailto:danilo.pianini@unibo.it) <!--<i class="fa-solid fa-computer"></i>-->,
@@ -544,5 +544,5 @@ Possible **future directions**:
 
 <img src="images/vmc-qr.svg" alt="Examples repo">
 <div style="text-align: center;">
-<p><i class="fab fa-github mr-3" style="color: #095aa6;"></i> <a href="https://github.com/angelacorte/vmc-experiments">angelacorte/vmc-experiments</a></p>
+<p><i class="fab fa-github mr-3" style="color: #095aa6;"></i> <a href="https://github.com/angelacorte/fieldVMC">angelacorte/fieldVMC</a></p>
 </div>
