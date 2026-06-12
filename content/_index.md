@@ -24,7 +24,7 @@ and
 
 ---
 
-{{< multicol>}}
+{{< multicol >}}
 
 {{% col %}}
 
@@ -33,27 +33,25 @@ and
 
 {{% /col %}}
 
-{{< col >}}
-{{% fragment %}}
+{{% col %}}
+
 ### Organizations
 ![organization order image](images/organization-order-svgrepo-com.svg)
-{{%/ fragment %}}
-{{</ col >}}
 
-{{< col >}}
-{{% fragment %}}
+{{% /col %}}
+
+{{% col %}}
+
 ### Flocking swarms
 ![organization order image](images/flock.svg)
-{{%/ fragment %}}
-{{</ col >}}
+
+{{% /col %}}
 
 {{</ multicol >}}
 
-{{% fragment %}}
 # What do they have in common?
-{{%/ fragment %}}
 
-{{< frag c="## **runtime-generated hierarchical structure**" >}}
+**runtime-generated hierarchical structure**
 
 ---
 
@@ -61,22 +59,27 @@ and
 
 {{< multicol >}}
 
-{{< col class="col-8">}}
-<p class = "fragment" data-fragment-index="0">A model for the growth of artificial structures over time.</p>
-<p class = "fragment" data-fragment-index="1">Works on <b>tree-like structures</b>, in which every node can get information from the environment.</p>
-<p class = "fragment" data-fragment-index="2">The leaves of the tree start by sending the amount of <b>success</b> they sense to the root.</p>
-<p class = "fragment" data-fragment-index="3">The root sends back an amount of <b>resources</b> based on the success received from the leaves, regulating the tickness of their connections.</p>
-<h3 class = "fragment" data-fragment-index="4"><i class="fa-solid fa-arrow-right"></i> Limitations</h3>
-<p class = "fragment" data-fragment-index="5"><i class="fa-solid fa-triangle-exclamation"></i><b> Implicitly synchronous</b>.</p>
-<p class = "fragment" data-fragment-index="11"><i class="fa-solid fa-triangle-exclamation"></i> Requires an <b> underlying tree structure</b> (can't work on graphs).</p>
-<!-- <p class = "fragment" data-fragment-index="12"><i class="fa-solid fa-angles-right"></i>Could restricts the model usefulness, leading to <b>abstraction gaps</b>.</p> -->
+{{% col class="col-8"%}}
+
+A model for the growth of artificial structures over time.
+
+Works on <b>tree-like structures</b>, in which every node can get information from the environment.
+
+The leaves of the tree start by sending the amount of <b>success</b> they sense to the root.
+
+The root sends back an amount of <b>resources</b> based on the success received from the leaves, regulating the tickness of their connections.
+
+### Limitations
+
+<i class="fa-solid fa-triangle-exclamation"></i><b> Implicitly synchronous</b>.
+
+<i class="fa-solid fa-triangle-exclamation"></i> Requires an <b> underlying tree structure</b> (can't work on graphs).
+
 {{</ col >}}
 
 {{< col >}}
 <div class="r-stack">
   <img
-    class="fragment current-visible"
-    data-fragment-index="0"
     src="images/tree.svg"
     width="180%"
     height="170%"
@@ -159,8 +162,8 @@ and
     height="170%"
   />
 </div>
-{{</ col >}}
-{{</ multicol >}}
+{{< /col >}}
+{{< /multicol >}}
 
 <div>
 <small style="text-align: left">
@@ -176,10 +179,8 @@ Porting VMC into a framework that by-design:
 1. supports **graph structures** and
 2. features **asynchronous** computations.
 
-{{% fragment %}}
 If the implementation is feasible,
 it will automatically overcome the limitations of the original model.
-{{%/ fragment %}}
 
 ---
 
@@ -206,13 +207,13 @@ Based on the **Field Calculus**<small>[3]</small>, operates by manipulating dist
 
 {{< multicol >}}
 
-{{< col class="col-8">}}
-<p class = "fragment" data-fragment-index="0">Nodes can <b>compute</b>.</p>
-<p class = "fragment" data-fragment-index="1">Neighboring nodes can <b>communicate</b>.</p>
-<p class = "fragment" data-fragment-index="2">Nodes have <b>sensors</b>:</br><em>success, resource, distance, and optionally position.</em></p>
-<p class = "fragment" data-fragment-index="3">Nodes have optional <b>actuators</b>:</br><em>spawning and destroying.</em></p>
+{{% col class="col-8"%}}
+- Nodes can <b>compute</b>.
+- Neighboring nodes can <b>communicate</b>.
+- Nodes have <b>sensors</b>:</br><em>success, resource, distance, and optionally position.</em>
+- Nodes have optional <b>actuators</b>:</br><em>spawning and destroying.</em>
 
-{{</ col >}}
+{{%/ col %}}
 
 {{< col >}}
 <div class="r-stack">
@@ -245,8 +246,8 @@ Based on the **Field Calculus**<small>[3]</small>, operates by manipulating dist
     height="170%"
   />
 </div>
-{{</ col >}}
-{{</ multicol >}}
+{{< /col >}}
+{{< /multicol >}}
 
 ---
 
@@ -261,12 +262,12 @@ Based on the **Field Calculus**<small>[3]</small>, operates by manipulating dist
 (multiple) **Trees** are built on top of **arbitrary networks** using
 the _self-organizing coordination regions_ (SCR)<small>[4]</small> pattern.
 
-<p class = "fragment" data-fragment-index="0"><b>SCR</b> performs <b>continuously</b>:</p>
+<p><b>SCR</b> performs <b>continuously</b>:</p>
 <ol>
-  <li class="fragment" data-fragment-index="1">Sparse <b>leader election</b>;</li>
-  <li class="fragment" data-fragment-index="3"><b>Control region expansion</b> from leaders;</li>
-  <li class="fragment" data-fragment-index="4"><b>Upstream</b> information <b>flows</b> construction;</li>
-  <li class="fragment" data-fragment-index="5"><b>Decision-making</b> and <b>downstream propagation</b>.</li>
+  <li>Sparse <b>leader election</b>;</li>
+  <li><b>Control region expansion</b> from leaders;</li>
+  <li><b>Upstream</b> information <b>flows</b> construction;</li>
+  <li><b>Decision-making</b> and <b>downstream propagation</b>.</li>
 </ol>
 
 {{%/ col %}}
@@ -315,9 +316,9 @@ the _self-organizing coordination regions_ (SCR)<small>[4]</small> pattern.
     height="170%"
   />
 </div>
-{{%/ col %}}
+{{% /col %}}
 
-{{</ multicol >}}
+{{< /multicol >}}
 
 
 <div>
@@ -326,46 +327,26 @@ the _self-organizing coordination regions_ (SCR)<small>[4]</small> pattern.
 </small>
 </div>
 
-<!-- SCR addresses problem decomposition and task assignment in distributed settings by: (i) electing sparse lead- ers; (ii) evolving regions from leaders; (iii) creating upstream information flows [14] towards the leader; (iv) performing decision-making at the leader and downstreaming decisions. -->
-
-
-<!-- (roots, regions, flaws) -->
-<!-- open source, soon in standard lib -> pattern organizzativi che prima non c'erano -->
-<!-- validation made by qualitative approach -->
-
 ---
 
 # `FieldVMC`: **Aggregate Computing**-based VMC
 
-<!-- {{< multicol >}} -->
-
-<!-- {{< col >}} -->
 <h2>How it works</h2>
 <ol>
   <li><strong>Leader</strong>(s) are chosen <strong>dynamically</strong> based on resource availability;</li>
-  <li class="fragment" data-fragment-index="1">A <strong>gradient field</strong> defines zones around each leader, organized by distance to their nearest leader;</li>
-  <li class="fragment" data-fragment-index="2"><strong>Nodes send data to their leader</strong>, forming a hierarchical tree;</li>
-  <li class="fragment" data-fragment-index="3">Leaders <strong>distribute resources</strong> based on node performance;</li>
-  <li class="fragment" data-fragment-index="4">Nodes <strong>act based on resources and success</strong>, spawning new nodes or self-destructing.</li>
+  <li>A <strong>gradient field</strong> defines zones around each leader, organized by distance to their nearest leader;</li>
+  <li><strong>Nodes send data to their leader</strong>, forming a hierarchical tree;</li>
+  <li>Leaders <strong>distribute resources</strong> based on node performance;</li>
+  <li>Nodes <strong>act based on resources and success</strong>, spawning new nodes or self-destructing.</li>
 </ol>
-<!-- {{</ col >}} -->
 
-<!-- {{< col >}} -->
-<h3 class="fragment" data-fragment-index="5"> Supported features</h3>
+<h3> Supported features</h3>
 
 <ul>
-  <li class="fragment" data-fragment-index="6"><strong>Multiple leaders</strong>: allowing easier management of large network by splitting them in sub-systems;</li>
-  <li class="fragment" data-fragment-index="7"><strong>Growth and shrink</strong>: different implementations of <em>spawning/destroying</em> strategies can lead to different structures.</br>
-  <li class="fragment" data-fragment-index="8"><strong>Merge and split</strong>: ihnerits <em>self-organizing</em> capabilities from AC, thus supports network segmentation or merging.</li>
+  <li><strong>Multiple leaders</strong>: allowing easier management of large network by splitting them in sub-systems;</li>
+  <li><strong>Growth and shrink</strong>: different implementations of <em>spawning/destroying</em> strategies can lead to different structures.</li>
+  <li><strong>Merge and split</strong>: ihnerits <em>self-organizing</em> capabilities from AC, thus supports network segmentation or merging.</li>
 </ul>
-<!-- {{< frag c="<h3>Supported features</h3>" >}}
-{{% frag c="- **Multiple leaders**: allowing easier management of large network by splitting them in sub-systems;" %}}
-{{% frag c="- **Growth and shrink**: different implementations of _spawning/destroying_ strategies can lead to different structures;" %}}
-{{% frag c="- **Merge and split**: inherits _self-organizing_ capabilities from AC, thus supports network segmentation or merging." %}} -->
-<!-- {{</ col >}} -->
-
-<!-- {{</ multicol >}} -->
-
 
 ---
 
@@ -386,15 +367,15 @@ the _self-organizing coordination regions_ (SCR)<small>[4]</small> pattern.
     height="170%"
   />
 </div>
-{{</ col >}}
+{{< /col >}}
 
 {{% col %}}
 ## Self-Construction
 Creates a stable structure starting from a single node.
 
-{{%/ col %}}
+{{% /col %}}
 
-{{</ multicol >}}
+{{< /multicol >}}
 
 ---
 
@@ -412,22 +393,12 @@ Creates a stable structure starting from a single node.
     height="170%"
   />
 </div>
-{{</ col >}}
+{{< /col >}}
 
 {{% col %}}
 ## Self-Repairing
 
 Stabilization in two different structures starting from a damaged one.
-
-<!-- Starts from a network filled with nodes able to communicate with others within a specific range, -->
-<!-- **without** spawn or destroy policies. -->
-
-<!-- The structure elects a leader, that results to be the one nearest the resources source. -->
-
-<!-- Once the system has stabilized, all the nodes at the center of the structure are removed, -->
-<!-- creating two different non-communicating sub-systems. -->
-
-<!-- Then the two sub-systems restabilize independently. -->
 
 {{%/ col %}}
 
@@ -449,19 +420,12 @@ Stabilization in two different structures starting from a damaged one.
     height="170%"
   />
 </div>
-{{</ col >}}
+{{< /col >}}
 
 {{% col %}}
 ## Self-Integration
 
 Merging of two different structures into a single one.
-
-<!-- Starts from two non-communicating systems, **without** spawn and destroy policies. -->
-
-<!-- After the two systems have stabilized, -->
-<!-- they are merged. -->
-
-<!-- A new system is created, with the resources shared among the nodes differently. -->
 
 {{%/ col %}}
 
@@ -482,7 +446,7 @@ Merging of two different structures into a single one.
     height="180%"
   />
 </div>
-{{</ col >}}
+{{< /col >}}
 
 {{% col %}}
 ## Self-Segmentation
@@ -507,7 +471,7 @@ Multiple independent subsystems from a single one.
     height="170%"
   />
 </div>
-{{</ col >}}
+{{< /col >}}
 
 {{% col %}}
 ## Self-Optimization
