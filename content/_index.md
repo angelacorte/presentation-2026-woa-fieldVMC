@@ -9,15 +9,15 @@ outputs = ["Reveal"]
 # FieldVMC: an Asynchronous Model and Platform for Self-Organising Morphogenesis of Artificial Structures
 
 [**Angela Cortecchia**](mailto:angela.cortecchia@unibo.it) <!--<i class="fa-solid fa-computer"></i>-->,
-[Danilo Pianini](mailto:danilo.pianini@unibo.it) <!--<i class="fa-solid fa-computer"></i>-->,
 [Giovanni Ciatto](mailto:giovanni.ciatto@unibo.it) <!--<i class="fa-solid fa-computer"></i>-->,
+[Roberto Casadei](mailto:roby.casadei@unibo.it) <!--<i class="fa-solid fa-computer"></i>-->,
 and
-[Roberto Casadei](mailto:roby.casadei@unibo.it) <!--<i class="fa-solid fa-computer"></i>-->
+[Danilo Pianini](mailto:danilo.pianini@unibo.it) <!--<i class="fa-solid fa-computer"></i>-->
 
 
 
 <div style="text-align: center; width: 100%;">
-<img src="example-background.svg" style="width: 40%" />
+<img src="example-background.svg" style="width: 30%" />
 
 <!-- <i class="fa-solid fa-computer"></i> Department of Computer Science and Engineering, University of Bologna, Cesena (FC), Italy -->
 </div>
@@ -51,7 +51,7 @@ and
 
 # What do they have in common?
 
-**runtime-generated hierarchical structure**
+A **runtime-generated hierarchical structure**
 
 ---
 
@@ -61,19 +61,20 @@ and
 
 {{% col class="col-8"%}}
 
-A model for the growth of artificial structures over time.
+Models the growth of artificial structures over time.
 
-Works on <b>tree-like structures</b>, in which every node can get information from the environment.
+Works on **tree-like structures**: every node sense information from the environment.
 
-The leaves of the tree start by sending the amount of <b>success</b> they sense to the root.
-
-The root sends back an amount of <b>resources</b> based on the success received from the leaves, regulating the tickness of their connections.
+- Start from the leaves;
+- Information about local **success** is sent to the root; 
+- Root sends back **resources** to the leaves;
+- Regulates the growth of the structure snd the tickness of their connections.
 
 ### Limitations
 
-<i class="fa-solid fa-triangle-exclamation"></i><b> Implicitly synchronous</b>.
+⚠️ **Implicitly synchronous** 
 
-<i class="fa-solid fa-triangle-exclamation"></i> Requires an <b> underlying tree structure</b> (can't work on graphs).
+⚠️ Requires an **underlying tree structure** (can't work on graphs).
 
 {{</ col >}}
 
@@ -178,9 +179,6 @@ The root sends back an amount of <b>resources</b> based on the success received 
 Porting VMC into a framework that by-design:
 1. supports **graph structures** and
 2. features **asynchronous** computations.
-
-If the implementation is feasible,
-it will automatically overcome the limitations of the original model.
 
 ---
 
