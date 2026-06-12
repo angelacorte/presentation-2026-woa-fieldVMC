@@ -27,12 +27,12 @@
 
     <section><h1 id="fieldvmc-an-asynchronous-model-and-platform-for-self-organising-morphogenesis-of-artificial-structures">FieldVMC: an Asynchronous Model and Platform for Self-Organising Morphogenesis of Artificial Structures</h1>
 <p><a href="mailto:angela.cortecchia@unibo.it"><strong>Angela Cortecchia</strong></a> <!--<i class="fa-solid fa-computer"></i>-->,
-<a href="mailto:danilo.pianini@unibo.it">Danilo Pianini</a> <!--<i class="fa-solid fa-computer"></i>-->,
 <a href="mailto:giovanni.ciatto@unibo.it">Giovanni Ciatto</a> <!--<i class="fa-solid fa-computer"></i>-->,
+<a href="mailto:roby.casadei@unibo.it">Roberto Casadei</a> <!--<i class="fa-solid fa-computer"></i>-->,
 and
-<a href="mailto:roby.casadei@unibo.it">Roberto Casadei</a> <!--<i class="fa-solid fa-computer"></i>--></p>
+<a href="mailto:danilo.pianini@unibo.it">Danilo Pianini</a> <!--<i class="fa-solid fa-computer"></i>--></p>
 <div style="text-align: center; width: 100%;">
-<img src="example-background.svg" style="width: 40%">
+<img src="example-background.svg" style="width: 30%">
 <!-- <i class="fa-solid fa-computer"></i> Department of Computer Science and Engineering, University of Bologna, Cesena (FC), Italy -->
 </div>
 </section><section>
@@ -61,7 +61,7 @@ and
 </div>
 </div>
 <h1 id="what-do-they-have-in-common">What do they have in common?</h1>
-<p><strong>runtime-generated hierarchical structure</strong></p>
+<p>A <strong>runtime-generated hierarchical structure</strong></p>
 </section><section>
 <h1 id="vascular-morphogenesis-controller-vmc1">Vascular Morphogenesis Controller (<strong>VMC</strong>)<small>[1]</small></h1>
 
@@ -70,13 +70,17 @@ and
 
 
 
-<div class="col col-8"><p>A model for the growth of artificial structures over time.</p>
-<p>Works on <b>tree-like structures</b>, in which every node can get information from the environment.</p>
-<p>The leaves of the tree start by sending the amount of <b>success</b> they sense to the root.</p>
-<p>The root sends back an amount of <b>resources</b> based on the success received from the leaves, regulating the tickness of their connections.</p>
+<div class="col col-8"><p>Models the growth of artificial structures over time.</p>
+<p>Works on <strong>tree-like structures</strong>: every node sense information from the environment.</p>
+<ul>
+<li>Start from the leaves;</li>
+<li>Information about local <strong>success</strong> is sent to the root;</li>
+<li>Root sends back <strong>resources</strong> to the leaves;</li>
+<li>Regulates the growth of the structure snd the tickness of their connections.</li>
+</ul>
 <h3 id="limitations">Limitations</h3>
-<p><i class="fa-solid fa-triangle-exclamation"></i><b> Implicitly synchronous</b>.</p>
-<p><i class="fa-solid fa-triangle-exclamation"></i> Requires an <b> underlying tree structure</b> (can’t work on graphs).</p>
+<p>⚠️ <strong>Implicitly synchronous</strong></p>
+<p>⚠️ Requires an <strong>underlying tree structure</strong> (can’t work on graphs).</p>
 </div>
 
 
@@ -111,8 +115,6 @@ and
 <li>supports <strong>graph structures</strong> and</li>
 <li>features <strong>asynchronous</strong> computations.</li>
 </ol>
-<p>If the implementation is feasible,
-it will automatically overcome the limitations of the original model.</p>
 </section><section>
 <h1 id="meet-aggregate-computing2">Meet Aggregate Computing<small>[2]</small></h1>
 <img src="./images/acDevices.svg" width="70%">
