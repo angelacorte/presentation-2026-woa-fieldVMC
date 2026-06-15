@@ -6,9 +6,9 @@ outputs = ["Reveal"]
 
 +++
 
-# FieldVMC: an Asynchronous Model and Platform for Self-Organising Morphogenesis of Artificial Structures
+# FieldVMC: an Asynchronous Model and Platform for Self-Organising Morphogenesis of Artificial Structures <small>[*]</small>
 
-[**Angela Cortecchia**](mailto:angela.cortecchia@unibo.it) <!--<i class="fa-solid fa-computer"></i>-->,
+[**<span style="color: #bb2e29;">Angela Cortecchia</span>**](mailto:angela.cortecchia@unibo.it) <!--<i class="fa-solid fa-computer"></i>-->,
 [Giovanni Ciatto](mailto:giovanni.ciatto@unibo.it) <!--<i class="fa-solid fa-computer"></i>-->,
 [Roberto Casadei](mailto:roby.casadei@unibo.it) <!--<i class="fa-solid fa-computer"></i>-->,
 and
@@ -21,6 +21,13 @@ and
 
 <!-- <i class="fa-solid fa-computer"></i> Department of Computer Science and Engineering, University of Bologna, Cesena (FC), Italy -->
 </div>
+
+{{% footer %}}
+
+[*] Published in Complex Intell. Syst. 12(2) (2026) DOI: [10.1007/S40747-025-02141-Y](https://doi.org/10.1007/s40747-025-02141-y)
+
+{{% /footer %}}
+
 
 ---
 
